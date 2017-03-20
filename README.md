@@ -1,0 +1,1 @@
+# bc-20-typing-speed-application
