@@ -1,0 +1,29 @@
+{
+  "name": "typing-speed-application",
+  "version": "1.0.0",
+  "description": "A typing speed Application ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wapjude/bc-20-typing-speed-application.git"
+  },
+  "keywords": [
+    "Typist",
+    "Smart",
+    "Typing",
+    "fast",
+    "typing"
+  ],
+  "author": "Etanuwoma Jude",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wapjude/bc-20-typing-speed-application/issues"
+  },
+  "homepage": "https://github.com/wapjude/bc-20-typing-speed-application#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
