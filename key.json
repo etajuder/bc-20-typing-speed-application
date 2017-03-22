@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "typing-speed-application-40a8b",
+  "private_key_id": "200ea4d136210205b111dc55a9a47ba383aec655",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDgyO1P1EW0ArEA\nCCzFdP0r56YhgJVsJAnvd+cU5mhg02PoKpmBF5gkJWeFdT5TpQ8M/pzVl8yjJ3rv\nfDJOd8L6Uy00+zq/4DrZP8GhLZqldUIfKl58Pa54zNDk/qL/iP25R/gMvAitzDZX\nK2/KXbqNo67Ya135BThAK0Iiffg6yCw/bac1ty4jqH5b34ZqwWTIQ3MaEzyLc/2E\nHIw7ELUdSQxsHJ0s3nKvDEz3LGghR/SZR0jTyu7cJ5fI6CTAkH9RvnrMsZVP1goi\nBW6qJqif5v/jGiYlkgW/psmK3GZk47+A6EXl6CXAooJiRIyroIChRBlnt3IcL4zK\nOkMc6pg/AgMBAAECggEAeVNZ62WKfb+aI4dGCwm7AHCW1axeejD1f+A6xKgcHG7c\nlNoxYmEGyDO8LWd7zY/gkMX4hrzZQhK0IwDo8jtn7M7qLpePPTNc8Beefk1sE/Q3\nTTUELJDqU99QvNjHx578O34h31W6ZXw8tE4Il7SBVaPMYpmI7jioBNKUbqOJUMfo\n03yNgKKRttzRuV7GoTyyRiirW/gzEEk6rikfDluT/KHi3YoWM+eZeRxU0wESpfz6\ncGdVUjtY7llkxMudkS92nvzaEexQbd6f3dqpuBLHDw1QUaCR7dHtCHo/4v2DaPzb\n2K1kz0GQmiyUCaBwm7f0LBqSctKZ0hm10SumRk1GYQKBgQD+4aFhc2qF69/py7K5\nxAzDalKSCd7ruHyO3qgtshkyGYv4qZ16oZKohAqU0UkoNy4pz9xY0kCNadCb7c66\nl7Qka93IqTqcqHfVuLYyfhLs/JNLw1twRiDDjsP9KYxDgD2Kj5yXiwafnDFoT513\n8iIi2RLYW+VM5LPVrlKDLWOnzwKBgQDhxXtiAvDz2a6fpi34ymALxMnhsDTm1ReW\nT3MZ6KjBKJdTFsuefN3Y6YTi1JCCfvFemIK6Yb8aJ9S09ZPHJruZ4TL3quQRpHGc\nBbU5Y0VzhzcT9Xk48wyGjraxRnXU7k06JkFi5UvPV0KDxSOlLVeMCMV7R94CeSnz\nUNd6NpW0kQKBgEPlcwn0puG57dHn81pNAWFlB03j10BPys58Pay+jrur1n+NH2g1\ndk3xrqfqAGT4HhIBTx9SEuQY1ftTpAhMtS4mldQIUJa+wf1q0Q4uS3hZ6Br8lXUZ\nGU0+0LK1yKmKldo9W2d7H26ROxAgdUAofjNuQ/jisfiDy+wWHeDXzH49AoGBANQL\nFgbHnGZqXIe1HBg+elaTTMibJhRmrvCNTh1XVqeT6AwxrKv9up6vNA+WdOMbNrcR\npjZG96UpI62RuGmjBy9PQv85kVrAh7Nx6PMtOV138VLdiizimTEHeK6m7qQ97Gpg\n46hukvT5j48S6JeKLl9nHZLbvLe19KCBnN87xP8BAoGBALydHbreCpdTt4OLUX0+\nnDQGipfpIkX4e0nnxxVQl1xM69UxYJJ2ERO9/wV1rnH13RtxhD5pM7LBDRy5ZYWP\nPfBnJvODjtR+XEww/vhgyJ09pwozs8U3fuKgd3XyfpNCQqAXZZLyF8QQrY+fHAte\n7KFSyS7uIzW3I0NzUexNE/e1\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-wy6yq@typing-speed-application-40a8b.iam.gserviceaccount.com",
+  "client_id": "118380928950270257177",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-wy6yq%40typing-speed-application-40a8b.iam.gserviceaccount.com"
+}

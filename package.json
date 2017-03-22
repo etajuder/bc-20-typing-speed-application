@@ -24,6 +24,15 @@
   },
   "homepage": "https://github.com/wapjude/bc-20-typing-speed-application#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-session": "^1.15.1",
+    "firebase": "^3.7.2",
+    "firebase-admin": "^4.1.3",
+    "handlebars": "^4.0.6",
+    "multer": "^1.3.0",
+    "pug": "^0.1.0"
   }
 }
