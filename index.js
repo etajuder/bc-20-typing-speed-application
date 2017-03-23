@@ -137,7 +137,8 @@ var handlebars = require('express-handlebars');
            var user = database.ref("players/"+req.cookies.userId);
            user.update({
                "ACC":ACC,
-               "WPM":WPM
+               "WPM":WPM,
+               "NAME":req.cookies.fullname
            });
            res.send("updated");
        });
