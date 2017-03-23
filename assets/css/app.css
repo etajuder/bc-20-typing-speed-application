@@ -370,7 +370,7 @@ footer {
             
         }
         .score_details{
-            width: 100px;
+            width: 150px;
             float: right;
         }
         .score_details{
@@ -380,6 +380,21 @@ footer {
             padding: 10px;
             border-radius: 500px;
             background: #53a523;
+        }
+        .score_details a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .user_score{
+            margin-bottom: 10px;
+        }
+        .user_name{
+            float: left;
+        }
+        .m_name{
+            font-size: 20px;
+            font-weight: bold;
+            color: #53a523;
         }
         
         .score_buttons{

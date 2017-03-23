@@ -34,40 +34,29 @@
                         <a href="logout">Logout</a>
                     </div>
                     <div class="score_details">
-                        <a  href="leader">Leader Board</a>
+                        <a  href="home">Home</a>
                     </div>
                     <div class="clear"></div>
                 </div>
                 <div class="intro">
-                    <div class="action_area">
-                    <p id="exercise" style="display: none;">{{user.exercise}}</p>
-                    <p class="typed" style="display: none"></p>
                     
-                    <h1 id="ready">Ready?</h1>
-                    <div>
-                    <a href="#" id="action">Set!</a>
-                    </div>
-                    
-                    <div class="form_section" style="display: none;">
-                        <textarea id="typing_area" ></textarea>
-                        <a href="" class="score_buttons" id="start_again" style="display: none;">Start Again</a>
-                    </div>
-                    </div>
-                    <div class="scoreboard">
-                        <div class="score_holder">
+                    <div class="leader_board">
+                        <div class="">
                             <h3>Result</h3>
-                             <div class="score_buttons">
-                               <label id="word_per_minute">0WPM</label>
+                            {{#each leader_boards}}
+                            <div class="user_score">
+                                <div class="user_name">
+                                    <label class="m_name">{{NAME}}</label>
+                                </div>
+                             <div class="score_details">
+                               <label id="word_per_minute">{{WPM}}WPM</label>
                              </div>
-                            <div class="score_buttons">
-                               <label id="percentage">0%ACC</label>
+                                <div class="score_details">
+                               <label id="word_per_minute">{{ACC}}%ACC</label>
                              </div>
-                            <div class="score_buttons">
-                               <label id="total_word_typed">0%TWT</label>
+                                <div class="clear"></div>
                              </div>
-                            <div class="score_buttons error">
-                               <label id="wrongly_typed">0 WWT</label>
-                            </div>
+                            {{/each}}
                         </div>
                     </div>
                 </div>

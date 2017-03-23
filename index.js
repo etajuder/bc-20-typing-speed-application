@@ -58,6 +58,18 @@ var handlebars = require('express-handlebars');
            res.render("home",data);
            
        });
+       app.get("/leader",isLoggedIn,function(req,res){
+           var ref = database.ref("/players");
+           
+         ref.on("value", function(snapshot) {
+              data.leader_boards =snapshot.val();
+         }, function (error) {
+               console.log("Error: " + error.code);
+         });
+           data.layout = false;
+           res.render("leader",data);
+             
+       });
        
         app.get("/logout",function(req,res){
            req.session.destroy(function(){console.log("logged out")});
@@ -65,16 +77,7 @@ var handlebars = require('express-handlebars');
            res.redirect("/");
        });
        
-       app.get("/test",function(req,res){
-           firebase.database().ref('/users/' + req.cookies.userId).once('value').then(function(snapshot) {
-               var wpm = snapshot.val().WPM;
-               res.send(wpm);
-             }).catch(function(error){
-                 res.send(error);
-             });
-             
-             
-       });
+       
        
        //Manage Request
        
@@ -94,9 +97,9 @@ var handlebars = require('express-handlebars');
                      res.cookie('fullname',post.fullname);
                      res.cookie('userId',userRecord.uid);
                      res.cookie('email',post.email);
-                     database.ref('players/'+userRecord.uid).set({WPM:0,ACC:0});
-                     res.cookie('acc',0);
-                     res.cookie('wpm',0);
+                     database.ref('players/'+userRecord.uid).set({WPM:0,ACC:0,NAME:post.fullname});
+                     res.cookie('acc',"0");
+                     res.cookie('wpm',"0");
                      res.send({url:'/home',message:'Account successfully created',auth:true}); 
                     })
                     .catch(function(error) {
@@ -111,21 +114,35 @@ var handlebars = require('express-handlebars');
         //Login Request
         app.post("/login",function(req,res){
             var post = req.body;
-
+               var data = {};
+               var record;
                 firebase.auth().signInWithEmailAndPassword(post.email, post.password).then(function(userRecord){
 
                           res.cookie('fullname',userRecord.displayName);
                           res.cookie('email',userRecord.email);
                           res.cookie('userId',userRecord.uid);
-                           
-                          res.send({url:'/home',message:'Logged in successfully',auth:true}); 
+                        
+                         res.send({url:'/home',message:'Logged in successfully',auth:true}); 
                       }).catch(function(error) {
                             
-                            res.send(error);
+                            res.send(error); 
                       });
+                    
+                      
+                   
        });
 
-       
+       app.post("/update_record",function(req,res){
+           var post = req.body;
+           var ACC = post.percent;
+           var WPM = post.wpm;
+           var user = database.ref("players/"+req.cookies.userId);
+           user.update({
+               "ACC":ACC,
+               "WPM":WPM
+           });
+           res.send("updated");
+       });
        //End Manage Request
       
       //End Controllers
@@ -136,10 +153,24 @@ var handlebars = require('express-handlebars');
             var error = new Error("User not Authenticated");
             res.redirect("/")
         }else{
-            data.user.userId = req.cookies.userId;
+           
+            var userId = req.cookies.userId;
+             
+             firebase.database().ref('players/' + userId).once('value').then(function(snapshot) {
+                   var acc = snapshot.val().ACC;
+                   var wpm = snapshot.val().WPM;
+                   res.cookies('wpm','0');
+                   res.cookies('acc','0');
+                   set_values(wpm,acc);
+            }).catch(function(error){
+                console.log(eror);
+            });
+             data.user.userId = req.cookies.userId;
             data.user.fullname = req.cookies.fullname;
             data.user.email = req.cookies.email;
-            
+          data.user.word_per_minute = req.cookies.wpm;
+          data.user.speed_percentage = req.cookies.acc;
+          console.log(req.cookies)
             next();
         }
     }
@@ -148,6 +179,7 @@ var handlebars = require('express-handlebars');
         if(req.cookies.userId === undefined){
             data.user.is_logged_in = false;
             data.user.not_logged_in = true;
+            
         }else{
             data.user.is_logged_in = true;
             data.user.not_logged_in = false;

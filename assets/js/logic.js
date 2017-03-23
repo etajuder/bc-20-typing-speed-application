@@ -1,14 +1,26 @@
 
+
+
+
+$(document).ready(function() {
+    $('#exercise').bind('copy paste', function(e) {
+        e.preventDefault();
+    });
+});
+
+
             var timestart = 0;
             var wrong_typed = 0;
             var total_word_typed = 0;
             var percentage_right = 0;
             $("body").on("click","#action",function(){
+                
                 var ready = $("#ready");
                 var typed = $(".typed");
                 var form_section = $(".form_section");
                 var exercise = $("#exercise");
                 var stage = $(this).text();
+                
                 if(stage === "Set!"){
                     ready.hide();
                     exercise.removeAttr("style");
@@ -25,11 +37,7 @@
                 }
             });
             
-            $('#ready').toggleClass('magictime vanishIn');
-           setInterval(function(){ 
-	$('#ready').toggleClass('magictime vanishIn');
-          }, 2000 );
-          
+     
           
           
           $(document).ready(function(){
@@ -59,8 +67,9 @@
                             typing_area.val("");
                             typing_area.hide();
                             $("#start_again").removeAttr("style");
-                            $("#word_per_minute").html(Math.ceil(word_count.length/total_minute)+" WPM");
-                      
+                            var wpm =Math.ceil(word_count.length/total_minute);
+                            $("#word_per_minute").html(wpm+" WPM");
+                            send_report(wpm,percentage_right);
                        }
                       
                       
@@ -78,9 +87,11 @@
                                 word_builder+=" "+typed;
                                 
                        }else{
-                           
+                              if(typed === ""){
+                                 word_builder+=" "+"<span class='error_word'>"+"-"+"</span>";   
+                              }else{
                                 word_builder+=" "+"<span class='error_word'>"+typed+"</span>";
-                                
+                            }
                        }
                       
                        index+=1;
@@ -110,7 +121,18 @@
                   $("#wrongly_typed").html((wrong_typed)+" WWT");
                   $("#total_word_typed").html(arr.length+" TWT");
                   $("#percentage").html(percentage_right+"% ACC");
-                  
+                   
+               }  
+               
+               function send_report(wpm,percent){
+                   $.ajax({
+                       url: "/update_record",
+                       type: 'POST',
+                       data: {wpm:wpm,percent:percent},
+                       success: function(data, textStatus, jqXHR) {
+                 
+                         }
+                   });
                }
                
             });
