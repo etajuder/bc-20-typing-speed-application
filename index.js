@@ -3,10 +3,8 @@ var bodyParser = require('body-parser');
 var model = require('./model/model');
 var admin = require("firebase-admin");
 var firebase = require("firebase");
-var bcrypt = require('bcrypt');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-var LocalStorage = require("node-localstorage").LocalStorage;
 var data = new model();
 var app = express();
 var serviceAccount = require("./key.json");
@@ -139,7 +137,8 @@ var handlebars = require('express-handlebars');
            var user = database.ref("players/"+req.cookies.userId);
            user.update({
                "ACC":ACC,
-               "WPM":WPM
+               "WPM":WPM,
+               "NAME":req.cookies.fullname
            });
            res.send("updated");
        });
