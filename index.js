@@ -65,7 +65,16 @@ var handlebars = require('express-handlebars');
            res.redirect("/");
        });
        
-       
+       app.get("/test",function(req,res){
+           firebase.database().ref('/users/' + req.cookies.userId).once('value').then(function(snapshot) {
+               var wpm = snapshot.val().WPM;
+               res.send(wpm);
+             }).catch(function(error){
+                 res.send(error);
+             });
+             
+             
+       });
        
        //Manage Request
        
@@ -85,7 +94,9 @@ var handlebars = require('express-handlebars');
                      res.cookie('fullname',post.fullname);
                      res.cookie('userId',userRecord.uid);
                      res.cookie('email',post.email);
-                     
+                     database.ref('players/'+userRecord.uid).set({WPM:0,ACC:0});
+                     res.cookie('acc',0);
+                     res.cookie('wpm',0);
                      res.send({url:'/home',message:'Account successfully created',auth:true}); 
                     })
                     .catch(function(error) {

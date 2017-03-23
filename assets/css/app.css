@@ -36,8 +36,7 @@ header {
         font-weight: bold;
         color: #53a523;
         width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
+        
     }
      header h3 {
         font-size: 30px;
@@ -371,8 +370,98 @@ footer {
             
         }
         .score_details{
-            width: 200px;
+            width: 100px;
             float: right;
         }
+        .score_details{
+            font-size: 25px;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 500px;
+            background: #53a523;
+        }
+        
+        .score_buttons{
+            width: 130px;
+            margin-bottom: 10px;
+             font-size: 25px;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 500px;
+            background: #53a523;
+        }
+        .error{
+            background: #FF6347;
+        }
+        
+        .intro{
+            width: 900px;
+            min-height: 200px;
+            margin: 0px auto;
+            
+        }
+        .action_area{
+            width: 70%;
+            float: left;
+            padding: 4px;
+        }
+        .scoreboard{
+            width: 220px;
+            float: left;
+            min-height: 365px;
+            background: url('../images/board.png') no-repeat;
+            padding-top: 50px;
+            padding-left:30px;
+            overflow: hidden;
+        }
+        .intro h1{
+            text-align: center;
+            font-size: 80px;
+        }
+        .intro a{
+            margin-top: 40px;
+            text-decoration: none;
+            padding: 20px;
+            width: 150px;
+            height: 50px;
+            background: #53a523;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 28px;
+            margin-left: 35%;
+        }
+        
+        #exercise{
+           color: #53a523;
+           font-weight: bold;
+           font-size: 18px;
+        }
+        .typed{
+           color: #53a523;
+           font-weight: bold;
+           font-size: 18px;
+           margin-top: 20px;
+        }
+        .typed .error_word{
+            color: red;
+            text-decoration: line-through;
+        }
+        .form_section{
+            position: absolute;
+            bottom: 10px;
+            width: 40%;
+           
+            
+        }
+        .form_section textarea{
+            border-radius: 10px;
+            border: 1px solid #53a523;
+            width: 100%;
+            padding: 14px;
+        }
+        
 /* END: Page - footer */
 
