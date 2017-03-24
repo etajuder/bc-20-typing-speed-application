@@ -32,14 +32,13 @@ var database = firebase.database();
 var handlebars = require('express-handlebars');
         app.engine('.html',handlebars({extname: '.html',defaultLayout:'main'}));
         app.set('view engine','.html');
-       
+        app.set('port', (process.env.PORT || 5000));
         //Set Static files
         app.use(express.static('assets'));
         
         //Set MiddleWares
         
         app.use(cookieParser());
-        app.use(session({secret:"someshittysecret"}))
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended:true}))
         
@@ -70,7 +69,7 @@ var handlebars = require('express-handlebars');
        });
        
         app.get("/logout",function(req,res){
-           req.session.destroy(function(){console.log("logged out")});
+           
            res.clearCookie('userId');
            res.redirect("/");
        });
@@ -186,4 +185,4 @@ var handlebars = require('express-handlebars');
         next();
     }
 
-app.listen(3000);
+app.listen(app.get('port'));
