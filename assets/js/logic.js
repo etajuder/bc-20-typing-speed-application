@@ -2,18 +2,18 @@
 
 
 
-$(document).ready(function() {
-    $('#exercise').bind('copy paste', function(e) {
-        e.preventDefault();
+    $(document).ready(function() {
+        $('#exercise').bind('copy paste', function(e) {
+            e.preventDefault();
+        });
     });
-});
 
 
-            var timestart = 0;
-            var wrong_typed = 0;
-            var total_word_typed = 0;
-            var percentage_right = 0;
-            $("body").on("click","#action",function(){
+   var timestart = 0;
+   var wrong_typed = 0;
+   var total_word_typed = 0;
+   var percentage_right = 0;
+    $("body").on("click","#action",function(){
                 
                 var ready = $("#ready");
                 var typed = $(".typed");
@@ -21,12 +21,15 @@ $(document).ready(function() {
                 var exercise = $("#exercise");
                 var stage = $(this).text();
                 
-                if(stage === "Set!"){
+              if(stage === "Set!"){
+                  
                     ready.hide();
                     exercise.removeAttr("style");
                     $(this).text("Go!")
-                }else if(stage === "Go!"){
+              }else if(stage === "Go!"){
+                    
                     $("#typing_area").val("");
+                    $(".legend").hide();
                     typed.removeAttr("style");
                      timestart = +new Date();
                      wrong_typed = 0;
@@ -35,7 +38,7 @@ $(document).ready(function() {
                     form_section.removeAttr("style");
                     $(this).hide();
                 }
-            });
+  });
             
      
           
